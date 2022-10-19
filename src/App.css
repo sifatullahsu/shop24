@@ -12,6 +12,13 @@ img {
   max-width: 100%;
 }
 
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+}
+
 .product-section {
   display: grid;
   grid-template-columns: 80% 20%;
@@ -61,9 +68,10 @@ img {
   background-color: burlywood;
   border: 1px solid burlywood;
   width: 100%;
-  padding: 10px;
+  padding: 6px;
   border-radius: 5px;
   color: #fff;
+  font-size: 14px;
 }
 
 .product button:hover {
@@ -146,11 +154,43 @@ img {
   margin: 2px 0;
 }
 
-.cart .calculation button.clear {
+.cart button.cart-clear {
   font-size: 13px;
   background-color: burlywood;
   padding: 5px 15px;
   border-radius: 4px;
   margin-top: 8px;
   color: #fff;
+}
+
+/* =========================================== */
+
+.page-middle-content {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.auth-form {
+  background-color: rgb(242, 244, 250);
+  padding: 30px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.auth-form .form-control {
+  margin-bottom: 20px;
+}
+
+.auth-form button {
+  background-color: burlywood;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.auth-form button:hover {
+  background-color: black;
+  border-color: black;
 }

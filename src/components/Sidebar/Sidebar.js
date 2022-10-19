@@ -5,7 +5,7 @@ const Sidebar = (props) => {
 
   return (
     <div className='sidebar'>
-      <Cart cartFunctionality={props}></Cart>
+      <Cart></Cart>
     </div>
   );
 };

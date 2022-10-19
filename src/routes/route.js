@@ -1,7 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
+import Login from '../components/Login/Login';
 import Order from '../components/Order/Order';
+import Register from '../components/Register/Register';
 import Shop from '../components/Shop/Shop';
 import Main from '../layouts/Main';
+import { productsLoader } from '../loaders/productsLoader';
 
 const route = createBrowserRouter([
   {
@@ -10,11 +13,20 @@ const route = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Shop></Shop>
+        element: <Shop></Shop>,
+        loader: () => productsLoader()
       },
       {
-        path: 'order',
+        path: '/order',
         element: <Order></Order>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ]
   }

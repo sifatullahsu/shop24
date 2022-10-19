@@ -6,7 +6,9 @@ const Order = () => {
     <div className='container mx-auto'>
       <h2 className='text-2xl  text-center my-5'>Order Page</h2>
 
-      <Cart></Cart>
+      <div style={{ maxWidth: '350px', margin: '0 auto' }}>
+        <Cart></Cart>
+      </div>
     </div>
   );
 };

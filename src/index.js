@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import CartContextComp from './contexts/CartContextComp';
+import AuthContextComp from './contexts/AuthContextComp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <CartContextComp>
+      <AuthContextComp>
+        <App />
+      </AuthContextComp>
+    </CartContextComp>
   </React.StrictMode>
 );
 

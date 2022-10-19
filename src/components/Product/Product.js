@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContextComp';
 
-const Product = (props) => {
-  const {product, handleAddToCart} = props;
-  const {id, name, img, category, price} = product;
-  
+const Product = ({ product }) => {
+
+  const { handleAddToCart } = useContext(CartContext);
+  const { id, name, img, category, price } = product;
 
   return (
     <div className='product'>
@@ -11,7 +12,7 @@ const Product = (props) => {
       <div className='category'>{category}</div>
       <h3>{name}</h3>
       <div className='price'>Price: {price}</div>
-      <button className='add-to-cart' onClick={() => {handleAddToCart(id)}}>Add to Cart</button>
+      <button className='add-to-cart' onClick={() => { handleAddToCart(id) }}>Add to Cart</button>
     </div>
   );
 };

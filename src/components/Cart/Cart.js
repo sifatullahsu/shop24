@@ -1,55 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContextComp';
+import CartCalculation from '../CartCalculation/CartCalculation';
 import CartItem from '../CartItem/CartItem';
 
-const Cart = (props) => {
+const Cart = () => {
 
-  const { cartItems, handleAddToCart, handleRemoveFromCart, handleRemoveAllFromCart, handleQtyFromCart } = props.cartFunctionality;
-
-  let subTotal = 0;
-  let shipping = 0;
-
-  for (const item of cartItems) {
-    subTotal = subTotal + (item.price * item.quantity);
-    shipping = shipping + item.shipping;
-  }
-
-  const tax = subTotal * 0.1;
-  const grandTotal = subTotal + shipping + tax;
+  const { cartData, handleRemoveFromCart, handleRemoveAllFromCart, handleQtyFromCart } = useContext(CartContext);
 
   return (
     <div className='cart'>
       <div className='cart-items'>
-        {cartItems.map(item => <CartItem item={item}
-          key={item.id}
-          handleAddToCart={handleAddToCart}
-          handleRemoveFromCart={handleRemoveFromCart}
-          handleQtyFromCart={handleQtyFromCart}
-        ></CartItem>)}
+        {
+          cartData.map(item => {
+            return <CartItem
+              key={item.id}
+              item={item}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleQtyFromCart={handleQtyFromCart}
+            ></CartItem>
+          })
+        }
       </div>
 
-      <div className='calculation'>
-        <div className='calculation-item'>
-          <span>Subtotal: </span>
-          <span>${subTotal}</span>
-        </div>
+      <CartCalculation></CartCalculation>
 
-        <div className='calculation-item'>
-          <span>Tax: (10%) </span>
-          <span>${tax.toFixed(2)}</span>
-        </div>
-
-        <div className='calculation-item'>
-          <span>Shipping: </span>
-          <span>${shipping}</span>
-        </div>
-
-        <div className='calculation-item'>
-          <span>Total: </span>
-          <span>${grandTotal}</span>
-        </div>
-
-        <button className='clear' onClick={handleRemoveAllFromCart}>Clear All</button>
-      </div>
+      <button className='cart-clear' onClick={handleRemoveAllFromCart}>Clear All</button>
     </div>
   );
 };
