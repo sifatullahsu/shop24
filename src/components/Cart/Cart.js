@@ -5,7 +5,7 @@ import CartItem from '../CartItem/CartItem';
 
 const Cart = () => {
 
-  const { cartData, handleRemoveFromCart, handleRemoveAllFromCart, handleQtyFromCart } = useContext(CartContext);
+  const { cartData, handleRemoveFromCart, handleQtyFromCart } = useContext(CartContext);
 
   return (
     <div className='cart'>
@@ -21,10 +21,7 @@ const Cart = () => {
           })
         }
       </div>
-
       <CartCalculation></CartCalculation>
-
-      <button className='cart-clear' onClick={handleRemoveAllFromCart}>Clear All</button>
     </div>
   );
 };

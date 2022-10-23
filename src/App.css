@@ -154,7 +154,7 @@ input {
   margin: 2px 0;
 }
 
-.cart button.cart-clear {
+.cart .cart-button {
   font-size: 13px;
   background-color: burlywood;
   padding: 5px 15px;

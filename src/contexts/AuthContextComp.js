@@ -16,6 +16,7 @@ const AuthContextComp = ({ children }) => {
   }
 
   const userRegister = (email, password) => {
+    console.log(email, password);
     return createUserWithEmailAndPassword(auth, email, password);
   }
 

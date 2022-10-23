@@ -3,7 +3,7 @@ import { CartContext } from '../../contexts/CartContextComp';
 
 const CartCalculation = () => {
 
-  const { cartCal } = useContext(CartContext);
+  const { cartCal, handleRemoveAllFromCart } = useContext(CartContext);
   const { subtotal, tax, shipping, total } = cartCal;
 
   return (
@@ -27,6 +27,14 @@ const CartCalculation = () => {
         <span>Total: </span>
         <span>${total}</span>
       </div>
+      {
+        subtotal ?
+          <button
+            className='cart-button'
+            onClick={handleRemoveAllFromCart}
+          >Clear All</button>
+          : ''
+      }
     </div>
   );
 };

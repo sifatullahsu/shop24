@@ -5,18 +5,18 @@ import { AuthContext } from '../../contexts/AuthContextComp';
 
 const Register = () => {
 
-  const { userRegiser } = useContext(AuthContext);
+  const { userRegister } = useContext(AuthContext);
 
   const handleUserRegister = (event) => {
     event.preventDefault();
 
     const form = event.target;
-    const email = form.email;
-    const password = form.password;
+    const email = form.email.value;
+    const password = form.password.value;
 
-    userRegiser(email, password)
+    userRegister(email, password)
       .then(result => {
-        console.log(result);
+        console.log(result.user);
         form.reset();
       })
       .catch(error => console.error(error))
