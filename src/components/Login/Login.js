@@ -10,8 +10,6 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
 
-  console.log(from);
-
 
   const handleUserLogin = (event) => {
     event.preventDefault();
@@ -22,9 +20,7 @@ const Login = () => {
 
     userLogin(email, password)
       .then(result => {
-        console.log(result.user);
         // form.reset();
-        console.log(from);
         navigate(from);
       })
       .catch(error => console.error(error))

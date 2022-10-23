@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 const Dashboard = () => {
-  const [news, setNews] = useState([]);
 
   useEffect(() => {
     fetch('http://localhost:5000/news/')

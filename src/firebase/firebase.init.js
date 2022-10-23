@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCPIDI8TXmAojyZicMdb9X4BJhnMQOzBsc",
-  authDomain: "netlify-project-4c42c.firebaseapp.com",
-  projectId: "netlify-project-4c42c",
-  storageBucket: "netlify-project-4c42c.appspot.com",
-  messagingSenderId: "607955067160",
-  appId: "1:607955067160:web:4c3c620f2c40d21ae37e6d"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 const app = initializeApp(firebaseConfig);
